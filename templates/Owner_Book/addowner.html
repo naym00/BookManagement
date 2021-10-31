@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Owner
+{% endblock %}
+
+{% block navbar %}
+    <a href="/" role="button">Home</a>
+    <a href="/addbook" role="button">Add Book</a>
+{% endblock %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="Submit" type="submit" value="Submit">
+        {{ text }}
+        {{ textForPhoneNumber }}
+    </form>
+{% endblock %}

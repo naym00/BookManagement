@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+    View Owners
+{% endblock %}
+
+{% block navbar %}
+    <a href="/" role="button">Home</a>
+    <a href="/addbook" role="button">Add Book</a>
+    <a href="/addowner" role="button">Add Owner</a>
+{% endblock %}
+
+{% block body %}
+    <br><h2>{{ headLine }}</h2>
+    {% for person in owner %}
+        Name: <a href="{% url 'booklist' id=person.id %}">{{ person.firstname }} {{ person.lastname }}</a><br>
+        Email: {{ person.email }}<br>
+        phone Number: {{ person.phoneNumber }}<br>
+        Gender: {{ person.gender }}<br><br>
+    {% endfor %}
+{% endblock %}

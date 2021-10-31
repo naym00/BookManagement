@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    Book List
+{% endblock %}
+
+{% block navbar %}
+    <a href="/" role="button">Home</a>
+    <a href="/addbook" role="button">Add Book</a>
+    <a href="/addowner" role="button">Add Owner</a>
+    <a href="/viewowner" role="button">View Owner</a>
+    <a href="{% url 'booklist' id=stor_id %}">Back</a>
+{% endblock %}
+
+{% block body %}
+    <br><h2>{{ headLine }}</h2><br>
+    Book Name: {{ book.book_name }}<br>
+    Writer Name: {{ book.writer_name }}<br><br>
+{% endblock %}

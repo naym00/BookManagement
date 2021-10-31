@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+    Book List
+{% endblock %}
+
+{% block navbar %}
+    <a href="/" role="button">Home</a>
+    <a href="/addbook" role="button">Add Book</a>
+    <a href="/addowner" role="button">Add Owner</a>
+    <a href="/viewowner" role="button">View Owner</a>
+{% endblock %}
+
+{% block body %}
+    <br><h2>{{ headLine }}</h2>
+    <h3>Book Owner: {{ owner.firstname }} {{ owner.lastname }}</h3><br>
+    {% for book in books %}
+        Book Name: <a href="/bookdetails/{{ book.id }}/{{ id }}" role="button">{{ book.book_name }}</a><br>
+        Writer Name: {{ book.writer_name }}<br><br>
+    {% endfor %}
+{% endblock %}
